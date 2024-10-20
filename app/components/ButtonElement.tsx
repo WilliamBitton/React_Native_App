@@ -102,7 +102,7 @@ function ButtonElement(props: Props): React.JSX.Element {
           />
         </View>
       )}
-      {title && 'Title'}
+      {title && title}
     </Button>
   );
 }

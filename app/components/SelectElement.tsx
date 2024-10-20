@@ -115,7 +115,7 @@ function SelectElement(props: Props): React.JSX.Element {
         <TouchableOpacity onPress={() => openBottomSheet(BottomSheet(props, closeBottomSheet))} style={styles.picker}>
           <View style={styles.inputContainer}>
             <Text style={styles.input}>{value.value}</Text>
-            <FontAwesomeIcon icon={['fas', 'dragon']} />
+            <FontAwesomeIcon icon={['fas', 'chevron-down']} />
           </View>
         </TouchableOpacity>
         {errorMessage && <Text style={styles.errorMessage}>{errorMessage}</Text>}

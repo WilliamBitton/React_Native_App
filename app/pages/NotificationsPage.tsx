@@ -57,9 +57,9 @@ function NotificationsPage(): React.JSX.Element {
   // }, [loggedInAccount])
 
   return (
-    <PageWrapper scrollingTitle title={'nav.notifications'}>
+    <PageWrapper scrollingTitle title={'Notifications'}>
       <View style={styles.parentContainer} ph24>
-        <ScrollingTitle title={'nav.notifications'} />
+        <ScrollingTitle title={'Notifications'} />
         <View mt8>
           <SwitchElement
             // onValueChange={doRequestNotifications}

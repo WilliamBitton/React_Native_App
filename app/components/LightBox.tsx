@@ -2,13 +2,26 @@ import { Image, makeStyles } from '@rneui/themed'
 import { useCallback, useEffect } from 'react'
 import { Dimensions, View } from 'react-native'
 import { Gesture, GestureDetector } from 'react-native-gesture-handler'
-import Animated, { clamp, runOnJS, useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated'
+import Animated, {
+  SharedValue,
+  clamp,
+  runOnJS,
+  useAnimatedStyle,
+  useSharedValue,
+  withTiming
+} from 'react-native-reanimated'
 
 const { width: screenWidth, height: screenHeight } = Dimensions.get('window')
 
 type Data = {
   source: string
   index: number
+}
+
+type NativeEvent = {
+  uri: string
+  width: number
+  height: number
 }
 
 type Props = {
@@ -33,7 +46,6 @@ function LightBox(props: Props): React.JSX.Element {
   const styles = useStyles()
   const scale = useSharedValue(0)
   const startScale = useSharedValue(0)
-  const nativeEventSources = useSharedValue([{}])
   const imageWidth = useSharedValue(0)
   const imageHeight = useSharedValue(0)
   const translationY = useSharedValue(0)
@@ -42,6 +54,7 @@ function LightBox(props: Props): React.JSX.Element {
   const prevTranslationY = useSharedValue(0)
   const prevTranslationX = useSharedValue(0)
   const scrollEnabled = useSharedValue(true)
+  const nativeEventSources: SharedValue<NativeEvent[]> = useSharedValue([])
   const animatedImageStyles = useAnimatedStyle(() => ({
     transform: [{ translateX: translationX.value }, { translateY: translationY.value }, { scale: scale.value }]
   }))
@@ -56,7 +69,7 @@ function LightBox(props: Props): React.JSX.Element {
   }
 
   const loadImageDimensions = () => {
-    nativeEventSources.value.map(object => {
+    nativeEventSources.value.map((object: NativeEvent) => {
       if (data[currentIndex.value].source === object.uri) {
         const { width, height } = object
         imageHeight.value = height

@@ -119,7 +119,7 @@ function PageWrapper(props: PropsWithChildren<Props>): React.JSX.Element {
         <View style={styles.titleContainer} pv16>
           <View style={styles.sectionLeft}>
             <Button type="clear" onPress={navigation.goBack}>
-              <FontAwesomeIcon icon={['fas', 'dragon']} color={theme.colors[color ?? 'primary']} size={24} />
+              <FontAwesomeIcon icon={['fas', 'arrow-left']} color={theme.colors[color ?? 'primary']} size={24} />
             </Button>
           </View>
           <View style={styles.sectionCenter}>

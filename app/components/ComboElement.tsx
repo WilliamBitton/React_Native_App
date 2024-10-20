@@ -66,7 +66,7 @@ function ComboElement(props: Props): React.JSX.Element {
     <View style={styles.container}>
       <View style={selectedButton ? styles.selectedButtonContainer : styles.unselectedButtonContainer}>
         <ButtonElement
-          title="general.yes"
+          title="Yes"
           style={styles.first}
           color={selectedButton ? color : 'white'}
           onPress={() => handleButtonPress(true)}
@@ -74,7 +74,7 @@ function ComboElement(props: Props): React.JSX.Element {
       </View>
       <View style={!selectedButton ? styles.selectedButtonContainer : styles.unselectedButtonContainer}>
         <ButtonElement
-          title="general.no"
+          title="No"
           style={styles.last}
           color={!selectedButton ? color : 'white'}
           onPress={() => handleButtonPress(false)}

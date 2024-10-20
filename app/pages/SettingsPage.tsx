@@ -1,8 +1,7 @@
 import type { NativeStackScreenProps } from '@react-navigation/native-stack'
 import { Divider, makeStyles } from '@rneui/themed'
-import { ScrollView } from 'react-native-gesture-handler'
 
-import LightBoxContainer from '../components/LightBoxContainer'
+import ButtonElement from '../components/ButtonElement'
 import ListItemElement from '../components/ListItemElement'
 import PageWrapper from '../components/PageWrapper'
 import View from '../components/View'
@@ -45,6 +44,7 @@ function SettingsPage({ navigation }: Props): React.JSX.Element {
   const styles = useStyles()
   const goToStyles = () => navigation.navigate('Styleguide')
   const goToNotifications = () => navigation.navigate('Notifications')
+  const goToGallery = () => navigation.navigate('Gallery')
 
   // const doSignOut = useMutation({
   //   mutationFn: async () => {
@@ -54,35 +54,31 @@ function SettingsPage({ navigation }: Props): React.JSX.Element {
 
   return (
     <PageWrapper>
-      <View style={styles.parentContainer} pb32>
-        {/* {loggedInAccount && loggedInAccount.admin && ( */}
+      <View style={styles.parentContainer} mt16 pb32>
         <ListItemElement
           title="Go to style guide"
           onPress={goToStyles}
-          icon={['fas', 'dragon']}
-          rightIcon={['fas', 'paw']}
+          icon={['fas', 'info-circle']}
+          rightIcon={['fas', 'arrow-right']}
           style={styles.listElement}
         />
-        {/* )} */}
-
         <ListItemElement
-          title={'nav.notifications'}
+          title={'Notifications'}
           onPress={goToNotifications}
-          icon={['fas', 'paw']}
-          rightIcon={['fas', 'dragon']}
+          icon={['fas', 'info-circle']}
+          rightIcon={['fas', 'arrow-right']}
+          style={styles.listElement}
+        />
+        <ListItemElement
+          title={'Gallery'}
+          onPress={goToGallery}
+          icon={['fas', 'info-circle']}
+          rightIcon={['fas', 'arrow-right']}
           style={styles.listElement}
         />
         <View style={styles.empty} />
         <Divider style={styles.divider} />
-        {/* <ButtonElement
-          color="primary"
-          title="nav.logout"
-          disabled={doSignOut.isPending}
-          onPress={() => {
-            doSignOut.mutate();
-          }}
-          style={{width: '100%'}}
-        /> */}
+        <ButtonElement color="primary" title="Logout" onPress={() => {}} style={{ width: '100%' }} />
       </View>
     </PageWrapper>
   )

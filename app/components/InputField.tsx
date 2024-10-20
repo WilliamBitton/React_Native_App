@@ -117,7 +117,7 @@ function InputField(props: Props): React.JSX.Element {
     if (password) {
       return (
         <TouchableOpacity onPress={togglePasswordVisibility}>
-          <FontAwesomeIcon icon={showPassword ? ['fas', 'paw'] : ['fas', 'dragon']} size={20} style={styles.icon} />
+          <FontAwesomeIcon icon={showPassword ? ['fas', 'eye'] : ['fas', 'eye-slash']} size={20} style={styles.icon} />
         </TouchableOpacity>
       )
     }
@@ -130,7 +130,7 @@ function InputField(props: Props): React.JSX.Element {
               onChangeText('')
             }
           }}>
-          <FontAwesomeIcon icon={['fas', 'dragon']} style={styles.icon} size={20} />
+          <FontAwesomeIcon icon={['fas', 'trash']} style={styles.icon} size={20} />
         </TouchableOpacity>
       )
     }

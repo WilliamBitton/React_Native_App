@@ -64,7 +64,7 @@ function DatePickerElement(props: Props): React.JSX.Element {
           {formattedDate}
         </Text>
         <View mt16>
-          <FontAwesomeIcon icon={['fas', 'dragon']} size={20} />
+          <FontAwesomeIcon icon={['fas', 'chevron-down']} size={20} />
         </View>
       </TouchableOpacity>
       <DatePicker

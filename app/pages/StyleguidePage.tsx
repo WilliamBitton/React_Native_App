@@ -33,6 +33,7 @@ type SelectData = {
 
 type Inputs = {
   input1: string
+  input2: string
   password: string
   switch1: boolean
   switch2: boolean
@@ -101,6 +102,7 @@ function StyleguidePage({ navigation }: Props): React.JSX.Element {
   } = useForm<Inputs>({
     defaultValues: {
       input1: '',
+      input2: '',
       password: '',
       switch1: false,
       switch2: false,
@@ -235,10 +237,28 @@ function StyleguidePage({ navigation }: Props): React.JSX.Element {
               onBlur={onBlur}
               onChangeText={onChange}
               value={value}
-              icon={['fas', 'dragon']}
+              icon={['fas', 'random']}
             />
           )}
           name="input1"
+        />
+        <Controller
+          control={control}
+          rules={{
+            required: true
+          }}
+          render={({ field: { onChange, onBlur, value } }): React.JSX.Element => (
+            <InputField
+              reset
+              errorMessage={errors.input2 && 'This is required'}
+              label="Input with reset button"
+              placeholder="Value"
+              onBlur={onBlur}
+              onChangeText={onChange}
+              value={value}
+            />
+          )}
+          name="input2"
         />
         <Controller
           control={control}
@@ -363,18 +383,18 @@ function StyleguidePage({ navigation }: Props): React.JSX.Element {
         <Text h2 mb16>
           Other components
         </Text>
-        <MediaBox buttonText="Title.format" mb16 />
+        <MediaBox buttonText="Download document" mb16 />
         <AlertBox
           title="AlertBoxWithIconTitle with an extremely long title"
           message="This is an alertBox with an extremely long subtitle that spans over multiple lines"
-          icon={['fas', 'dragon']}
+          icon={['fas', 'info-circle']}
           mb16
         />
         <AlertBox title="AlertBox" message="This is an alertBox" mb16 />
         <AlertBox
           title="AlertBoxWithIconTitle"
           message="This is an alertBox"
-          icon={['fas', 'dragon']}
+          icon={['fas', 'info-circle']}
           style={styles.alertBoxWhite}
           color="white"
           mb16
@@ -383,7 +403,7 @@ function StyleguidePage({ navigation }: Props): React.JSX.Element {
         <AlertBox
           title="AlertBoxWithIconTitle"
           message="This is an alertBox"
-          icon={['fas', 'dragon']}
+          icon={['fas', 'info-circle']}
           mb16
           color="blue"
         />
@@ -397,19 +417,19 @@ function StyleguidePage({ navigation }: Props): React.JSX.Element {
         <Text h3 mb8>
           Sizes
         </Text>
-        <ButtonElement icon={['fas', 'dragon']} color="primary" onPress={() => {}} style={{ width: 48 }} mb8 />
+        <ButtonElement icon={['fas', 'random']} color="primary" onPress={() => {}} style={{ width: 48 }} mb8 />
         <ButtonElement title="Button label" color="primary" onPress={() => {}} mb8 />
-        <ButtonElement title="Button w/ label + icon" icon={['fas', 'dragon']} color="primary" onPress={() => {}} mb8 />
+        <ButtonElement title="Button w/ label + icon" icon={['fas', 'random']} color="primary" onPress={() => {}} mb8 />
         <ButtonElement title="Block button" color="primary" onPress={() => {}} style={{ width: '100%' }} mb8 />
 
         <Text h3 mb8 mt16>
           Variants
         </Text>
-        <ButtonElement title="Button w/ label + icon" icon={['fas', 'dragon']} color="black" onPress={() => {}} mb8 />
-        <ButtonElement title="Button w/ label + icon" icon={['fas', 'dragon']} color="gray200" onPress={() => {}} mb8 />
-        <ButtonElement title="Button w/ label + icon" icon={['fas', 'dragon']} color="white" onPress={() => {}} mb8 />
-        <ButtonElement title="Button w/ label + icon" icon={['fas', 'dragon']} color="primary" onPress={() => {}} mb8 />
-        <ButtonElement title="Button w/ label + icon" icon={['fas', 'dragon']} color="blue" onPress={() => {}} mb8 />
+        <ButtonElement title="Button w/ label + icon" icon={['fas', 'random']} color="black" onPress={() => {}} mb8 />
+        <ButtonElement title="Button w/ label + icon" icon={['fas', 'random']} color="gray200" onPress={() => {}} mb8 />
+        <ButtonElement title="Button w/ label + icon" icon={['fas', 'random']} color="white" onPress={() => {}} mb8 />
+        <ButtonElement title="Button w/ label + icon" icon={['fas', 'random']} color="primary" onPress={() => {}} mb8 />
+        <ButtonElement title="Button w/ label + icon" icon={['fas', 'random']} color="blue" onPress={() => {}} mb8 />
 
         <Divider mv24 />
 
@@ -419,40 +439,40 @@ function StyleguidePage({ navigation }: Props): React.JSX.Element {
         <Text h3 mb16>
           Simple list
         </Text>
-        <ListItemElement title="Account" icon={['fas', 'dragon']} mb16 />
-        <ListItemElement title="Updates" icon={['fas', 'dragon']} mb16 />
-        <ListItemElement title="Password" icon={['fas', 'dragon']} mb16 />
+        <ListItemElement title="Account" icon={['fas', 'random']} mb16 />
+        <ListItemElement title="Updates" icon={['fas', 'random']} mb16 />
+        <ListItemElement title="Password" icon={['fas', 'random']} mb16 />
 
         <Text h3 mb16>
           Simple list with subline
         </Text>
         <ListItemElement
           title="Account"
-          icon={['fas', 'dragon']}
-          rightIcon={['fas', 'dragon']}
+          icon={['fas', 'random']}
+          rightIcon={['fas', 'chevron-down']}
           subTitle="Subline"
           mb16
         />
         <ListItemElement
           title="Updates"
-          icon={['fas', 'dragon']}
-          rightIcon={['fas', 'dragon']}
+          icon={['fas', 'random']}
+          rightIcon={['fas', 'chevron-down']}
           subTitle="Subline"
           mb16
         />
         <ListItemElement
           title="Password"
-          icon={['fas', 'dragon']}
-          rightIcon={['fas', 'dragon']}
+          icon={['fas', 'random']}
+          rightIcon={['fas', 'chevron-down']}
           subTitle="Subline"
           mb16
         />
         <Text h3 mb16>
           Link
         </Text>
-        <ListItemElement title="Account" icon={['fas', 'dragon']} rightIcon={['fas', 'dragon']} mb16 />
-        <ListItemElement title="Updates" icon={['fas', 'dragon']} rightIcon={['fas', 'dragon']} mb16 />
-        <ListItemElement title="Password" icon={['fas', 'dragon']} rightIcon={['fas', 'dragon']} mb16 />
+        <ListItemElement title="Account" icon={['fas', 'random']} rightIcon={['fas', 'chevron-down']} mb16 />
+        <ListItemElement title="Updates" icon={['fas', 'random']} rightIcon={['fas', 'chevron-down']} mb16 />
+        <ListItemElement title="Password" icon={['fas', 'random']} rightIcon={['fas', 'chevron-down']} mb16 />
 
         {/* <Divider mv24 />
 
@@ -473,44 +493,44 @@ function StyleguidePage({ navigation }: Props): React.JSX.Element {
             openBottomSheet([
               {
                 title: 'Add to Reserve List',
-                icon: ['fas', 'dragon'],
+                icon: ['fas', 'random'],
                 onPress: () => undefined
               },
               {
                 title: 'Download CV',
-                icon: ['fas', 'dragon'],
+                icon: ['fas', 'random'],
                 onPress: () => undefined
               },
               {
                 title: 'Delete Application',
-                icon: ['fas', 'dragon'],
+                icon: ['fas', 'random'],
                 onPress: () => undefined
               },
               { index: 1, divider: true },
               {
                 title: 'Share',
-                icon: ['fas', 'dragon'],
+                icon: ['fas', 'random'],
                 onPress: () => undefined
               },
               {
                 title: 'Report',
-                icon: ['fas', 'dragon'],
+                icon: ['fas', 'random'],
                 onPress: () => undefined
               },
               {
                 title: 'Add to Contacts',
-                icon: ['fas', 'dragon'],
+                icon: ['fas', 'random'],
                 onPress: () => undefined
               },
               {
                 title: 'Save in Bookmarks',
-                icon: ['fas', 'dragon'],
+                icon: ['fas', 'random'],
                 onPress: () => undefined
               },
               { index: 2, divider: true },
               {
                 title: 'Do something dangerous',
-                icon: ['fas', 'dragon'],
+                icon: ['fas', 'random'],
                 color: 'primary',
                 onPress: () => undefined
               }

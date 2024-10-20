@@ -84,7 +84,7 @@ function MediaBox(props: Props): React.JSX.Element {
         containerStyle={styles.container}>
         <View style={styles.iconContainer}>
           <FontAwesomeIcon
-            icon={['fas', 'paw']}
+            icon={['fas', 'file']}
             size={16}
             color={theme.colors.white}
           />
