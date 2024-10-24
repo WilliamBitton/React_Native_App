@@ -26,7 +26,7 @@ function Email(props: Props) {
           backgroundColor="white"
           onBlur={onBlur}
           onChangeText={onChange}
-          textColor="gray400"
+          textColor="black"
         />
       )}
       name="email"

@@ -70,25 +70,25 @@ function StartPage({ navigation }: Props): React.JSX.Element {
           <View style={styles.bottomSheetContainer}>
             <Text
               style={styles.bottomSheetTrigger}
-              color="gray400"
+              color="black"
               onPress={() => openBottomSheet(<BottomSheetTerms />)}>
               {'Terms'}
             </Text>
-            <Text color="gray400" mh16>
+            <Text color="white" mh16>
               ×
             </Text>
             <Text
               style={styles.bottomSheetTrigger}
-              color="gray400"
+              color="black"
               onPress={() => openBottomSheet(<BottomSheetPrivacy />)}>
               {'Privacy'}
             </Text>
-            <Text color="gray400" mh16>
+            <Text color="white" mh16>
               ×
             </Text>
             <Text
               style={styles.bottomSheetTrigger}
-              color="gray400"
+              color="black"
               onPress={() => openBottomSheet(<BottomSheetLegal />)}>
               {'Legal notice'}
             </Text>

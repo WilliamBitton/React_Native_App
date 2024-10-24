@@ -1,7 +1,6 @@
 import type { Dispatch, SetStateAction } from 'react'
 import type { Control } from 'react-hook-form'
 import { Controller } from 'react-hook-form'
-import { Linking } from 'react-native'
 
 import InputField from '../../../components/InputField'
 import { type Inputs } from './_types'
@@ -12,9 +11,7 @@ type Props = {
   setLoginFailed: Dispatch<SetStateAction<boolean>>
 }
 
-const moveToPasswordRecovery = () => {
-  Linking.openURL('https://www.muvac.com/forgot-password').catch(error => console.log(error))
-}
+const moveToPasswordRecovery = () => {}
 
 function Password(props: Props) {
   const { control, loginFailed, setLoginFailed } = props
@@ -34,7 +31,7 @@ function Password(props: Props) {
 
         return (
           <InputField
-            linkTitle={'forgot password?'}
+            linkTitle={'Forgot password?'}
             onLinkPress={moveToPasswordRecovery}
             errorMessage={loginMessage ?? (errors.password ? errorMessage : undefined)}
             label={'Password'}
@@ -46,7 +43,7 @@ function Password(props: Props) {
               setLoginFailed(false)
               onChange(newValue)
             }}
-            textColor="gray400"
+            textColor="black"
             mb0
           />
         )

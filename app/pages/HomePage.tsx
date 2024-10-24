@@ -58,7 +58,7 @@ function HomePage({ navigation }: Props): React.JSX.Element {
         <View ph24>
           <View mt24 mb32></View>
           <AlertBox
-            title="Muvac Mobile Version 0.1"
+            title="Demo Mobile Version 0.1"
             message={"Read what it's all about"}
             icon={['fas', 'info-circle']}
             mb32

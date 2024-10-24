@@ -45,7 +45,7 @@ function SignInPage(): React.JSX.Element {
             ph24
             pb32>
             <Text h1 color="white" mb24>
-              {'Email'}
+              {'Login'}
             </Text>
             <Email control={control} />
             <Password control={control} loginFailed={loginFailed} setLoginFailed={setLoginFailed} />
@@ -58,9 +58,9 @@ function SignInPage(): React.JSX.Element {
               style={{ width: '100%' }}
               mb24
             />
-            <Text style={{ textAlign: 'center' }} color="gray400">
+            <Text style={{ textAlign: 'center' }} color="black">
               {'New to Muvac ?'}{' '}
-              <Text color="gray400" style={{ textDecorationLine: 'underline' }} onPress={moveToSignUpPage}>
+              <Text color="black" style={{ textDecorationLine: 'underline' }} onPress={moveToSignUpPage}>
                 {'Create account'}
               </Text>
             </Text>

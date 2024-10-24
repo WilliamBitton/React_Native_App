@@ -7,6 +7,7 @@ import PageWrapper from '../components/PageWrapper'
 import View from '../components/View'
 import type { SettingsRouterParamList } from '../router/_routes'
 import useLoginStore from '../stores/login'
+import AccountCard from '../components/AccountCard'
 
 type Props = NativeStackScreenProps<SettingsRouterParamList, 'Settings'>
 
@@ -57,6 +58,7 @@ function SettingsPage({ navigation }: Props): React.JSX.Element {
   return (
     <PageWrapper>
       <View style={styles.parentContainer} mt16 pb32>
+      <AccountCard style={styles.accountCard} />
         <ListItemElement
           title="Go to style guide"
           onPress={goToStyles}
