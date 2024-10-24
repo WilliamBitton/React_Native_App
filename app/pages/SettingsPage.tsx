@@ -6,6 +6,7 @@ import ListItemElement from '../components/ListItemElement'
 import PageWrapper from '../components/PageWrapper'
 import View from '../components/View'
 import type { SettingsRouterParamList } from '../router/_routes'
+import useLoginStore from '../stores/login'
 
 type Props = NativeStackScreenProps<SettingsRouterParamList, 'Settings'>
 
@@ -45,6 +46,7 @@ function SettingsPage({ navigation }: Props): React.JSX.Element {
   const goToStyles = () => navigation.navigate('Styleguide')
   const goToNotifications = () => navigation.navigate('Notifications')
   const goToGallery = () => navigation.navigate('Gallery')
+  const loggedInAccount = useLoginStore(state => state.loggedInAccount)
 
   // const doSignOut = useMutation({
   //   mutationFn: async () => {
@@ -78,7 +80,14 @@ function SettingsPage({ navigation }: Props): React.JSX.Element {
         />
         <View style={styles.empty} />
         <Divider style={styles.divider} />
-        <ButtonElement color="primary" title="Logout" onPress={() => {}} style={{ width: '100%' }} />
+        <ButtonElement
+          color="primary"
+          title="Logout"
+          onPress={() => {
+            loggedInAccount?.signOut()
+          }}
+          style={{ width: '100%' }}
+        />
       </View>
     </PageWrapper>
   )

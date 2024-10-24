@@ -2,7 +2,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 import HomePage from '../pages/HomePage'
 import type { HomeRouterParamList } from './_routes'
-import AboutPage from '../pages/AboutPage'
 import SubstituteRequestsPage from '../pages/SubstituteRequestsPage'
 
 const Stack = createNativeStackNavigator<HomeRouterParamList>()
